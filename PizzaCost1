@@ -1,0 +1,45 @@
+/* Raswanth 
+ * class: PizzaCost1
+ * execution of program: the cost of making pizza, based on diameter and other mandatory factors(labour cost, rent cost) 
+ */
+/** 
+ * The class, PizzaCost1, is an application that displays the cost of making pizza based on:
+ * Diameter(specified by the user)
+ * Labor cost
+ * Rent cost
+ */
+/** 
+ * Details outlined in the question:
+ * The cost of making a pizza at a local shop is as follows:
+ *         Labor cost is $0.75 per pizza, regardless of size
+ *         Rent cost is $1.00 per pizza, regardless of size
+ *         Materials is $0.05*diameter*diameter(diameter is measured in inches)
+ */
+//The requirement is to find the cost by specifying the diameter, based on the above factors.
+import java.util.Scanner;
+import java.text.DecimalFormat; 
+public class PizzaCost1
+{ //start class definition
+  public static void main(String[] args)
+  {
+    //instantiate an object of the Scanner class in the java.util package
+    Scanner input = new Scanner(System.in);
+    //instantiate an object of the DecimalFormat class in the java.text package
+    DecimalFormat final_result = new DecimalFormat("$##0.00"); 
+    //declare and initialize few constants 
+    final double labor_cost = 0.75; 
+    final double rent_cost = 1.00; 
+    double diameter;
+    double materials; 
+    double cost; 
+    //initialize variables and get inputs from the user 
+    System.out.print("Enter the diameter of the pizza in inches: "); 
+    diameter = input.nextDouble(); 
+    input.close(); 
+    //initialize other variables and make the calculations
+    materials = 0.05 * diameter * diameter; 
+    cost = labor_cost + rent_cost + materials; 
+    //display the results 
+    System.out.println("The cost of making the pizza is: " + final_result.format(cost)); 
+  }
+}//end class definition
